@@ -18,10 +18,6 @@ abstract class Messenger {
   val threeByThree: String = validation.validBoardDimensions('threeByThree)
   val fourByFour: String = validation.validBoardDimensions('fourByFour)
 
-  val english: String = validation.validLanguages('english)
-  val spanish: String = validation.validLanguages('spanish)
-  val portuguese: String = validation.validLanguages('portuguese)
-
   val easy: String = validation.validComputerTypes('easy)
   val hard: String = validation.validComputerTypes('hard)
 

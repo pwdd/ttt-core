@@ -1,38 +1,56 @@
 package com.github.pwdd.ttt
 
-import com.github.pwdd.ttt.messenger._
-import com.github.pwdd.ttt.player._
+import com.github.pwdd.ttt.messenger.Messenger
 
-class Game(val messenger: Messenger, val view: View) {
-  def gameLoop(board: List[Symbol],
-               currentPlayer: Player,
-               opponent: Player,
-               messenger: Messenger,
-               waitTime: Int = 0): Unit = {
+class Game(val messenger: Messenger, val prompt: Prompt, val view: View) {
+  private val validation = Validation
+  private val isFirst = true
+  private val firstPlayer = Board.firstPlayer
+  private val secondPlayer = Board.secondPlayer
 
-    val spot = currentPlayer.getSpot(board)
-    val newBoard = Board.move(board, currentPlayer.marker, spot)
+  def play(waitTime: Int = 0): Unit = {
+    val gameLoop = new Loop(messenger, view)
+    val gameType = prompt.getUserChoice(messenger.chooseGameType, messenger.invalidGameType, validation.isValidGameType)
 
-    def delay() = if (isComputerXComputer(currentPlayer, opponent)) view.delay(waitTime)
+    val game = new Loop(messenger, view)
 
-    def finalMsg(board: List[Symbol]): Unit = board match {
-      case b if EvalGame.isDraw(b) => view.printMessage(messenger.draw)
-      case _ => view.printMessage(messenger.win(EvalGame.winnerMarker(board), EvalGame.winCombo(board)))
-    }
-
-    if (EvalGame.gameOver(newBoard)) {
-      delay()
-      view.printMessage(messenger.strBoard(newBoard))
-      finalMsg(newBoard)
-    } else {
-      delay()
-      view.printMessage(messenger.currentPlayerIs(opponent.marker))
-      view.printMessage(messenger.strBoard(newBoard))
-      gameLoop(newBoard, opponent, currentPlayer, messenger, waitTime)
-    }
+    def defineComputer(marker: Symbol, isFirst: Boolean) = {
+      val easy = validation.validComputerTypes('easy)
+      val choice = prompt.getUserChoice(
+      messenger.computerLevel(isFirst),
+      messenger.invalidComputerLevel,
+      validation.isValidComputerType)
+      if (choice == easy) player.computer.EasyComputer(marker)
+      else player.computer.HardComputer(marker)
   }
 
-  private def isComputerXComputer(firstPlayer: Player, secondPlayer: Player): Boolean = {
-    firstPlayer.isAI && secondPlayer.isAI
+    def getOpponent: player.Player = {
+      val humanXHuman = validation.validGameTypes('humanXHuman)
+      gameType match {
+        case bothHuman if gameType == humanXHuman => player.User(secondPlayer, messenger, view, prompt)
+        case _ => defineComputer(secondPlayer, !isFirst)
+      }
+    }
+
+    def getFirstPlayer: player.Player = gameType match {
+      case cxc if gameType == validation.validGameTypes('computerXComputer) => defineComputer(firstPlayer, isFirst)
+      case _ => player.User(firstPlayer, messenger, view, prompt)
+    }
+
+    val currentPlayer = getFirstPlayer
+
+    val opponent = getOpponent
+
+    val boardDimension = prompt.getUserChoice(
+      messenger.chooseBoardDimension,
+      messenger.invalidBoardDimension,
+      Validation.isValidBoardDimension)
+
+    val board = Board.newBoard(Board.length(boardDimension.toInt))
+
+    view.printMessage(messenger.currentPlayerIs(firstPlayer))
+    view.printMessage(messenger.strBoard(board))
+
+    game.gameLoop(board, currentPlayer, opponent, messenger, waitTime)
   }
 }

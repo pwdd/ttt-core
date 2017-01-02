@@ -3,7 +3,7 @@ package com.github.pwdd.ttt.player.computer
 import com.github.pwdd.ttt.EvalGame
 import com.github.pwdd.ttt.Board
 
-class HardComputer(val marker: Symbol) extends com.github.pwdd.ttt.player.Player {
+case class HardComputer(marker: Symbol) extends com.github.pwdd.ttt.player.Player {
   val isAI = true
 
   def getSpot(board: List[Symbol]): Int = {

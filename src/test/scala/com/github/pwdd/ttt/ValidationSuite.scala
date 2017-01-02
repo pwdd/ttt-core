@@ -49,17 +49,6 @@ class ValidationSuite extends  FunSuite {
     assert(!Validation.isValidBoardDimension("0"))
   }
 
-  test("isValidLanguage: returns true if arg is a value in 'Validation.validLanguages' map") {
-    assert(Validation.isValidLanguage("1"))
-    assert(Validation.isValidLanguage("2"))
-    assert(Validation.isValidLanguage("3"))
-  }
-
-  test("isValidLanguage: returns false if arg is not a value in 'Validation.validLanguages' map") {
-    assert(!Validation.isValidLanguage("0"))
-    assert(!Validation.isValidLanguage("a"))
-  }
-
   test("isValidComputerType: returns true if arg is a value in 'Validation.validComputerTypes' map") {
     assert(Validation.isValidComputerType("1"))
     assert(Validation.isValidComputerType("2"))
