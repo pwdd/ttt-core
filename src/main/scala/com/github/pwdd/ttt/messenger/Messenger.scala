@@ -31,21 +31,5 @@ abstract class Messenger {
 
   def win(winner: Option[Symbol], position: List[Int]): String
 
-  def strBoard(board: List[Symbol]): String = {
-    val pipe = "|"
-    val dashes = "---"
-    val separator = "\n" + List.fill(boardSize(board))(dashes).mkString(pipe) + "\n"
-
-    def symbolToStr(marker: Symbol): String = {
-      if (marker == com.github.pwdd.ttt.Board.emptySpot) "   "
-      else " " + marker.name + " "
-    }
-
-    def buildStrBoard(board: List[String]): Any = {
-      val breakLines = board.grouped(boardSize(board)).toList.map(_.mkString(pipe))
-      breakLines.mkString(separator)
-    }
-
-    "\n" + buildStrBoard(board.map(symbolToStr)).toString + "\n"
-  }
+  def strBoard(board: List[Symbol]): String
 }
