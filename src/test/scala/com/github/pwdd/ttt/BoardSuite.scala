@@ -2,7 +2,7 @@ package com.github.pwdd.ttt
 
 import org.scalatest.FunSuite
 
-class BoardSuite extends FunSuite {
+object BoardSuite extends FunSuite {
   val length = 9
   val emptyBoard: List[Symbol] = Board.newBoard(length)
   val e: Symbol = Board.emptySpot
