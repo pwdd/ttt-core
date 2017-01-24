@@ -1,4 +1,4 @@
-name := "tttCore"
+name := "ttt"
 
 version := "0.0.1"
 
@@ -10,8 +10,6 @@ scalaVersion := "2.12.1"
 
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.0"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.0" % "test"
-
-publishTo := Some(Resolver.file("file",  new File(Path.userHome.absolutePath+"/.m2/repository")))
 
 publishMavenStyle := true
 
@@ -28,7 +26,7 @@ publishTo := {
 pomIncludeRepository := { _ => false }
 
 pomExtra := (
-  <url>https://github.com/pwdd/ttt-core</url>
+  <url>https://github.com/pwdd/ttt</url>
     <licenses>
       <license>
         <name>MIT License</name>
@@ -37,8 +35,8 @@ pomExtra := (
       </license>
     </licenses>
     <scm>
-      <url>git@github.com:pwdd/ttt-core.git</url>
-      <connection>scm:git@github.com:pwdd/ttt-core.git</connection>
+      <url>git@github.com:pwdd/tttcore.git</url>
+      <connection>scm:git@github.com:pwdd/ttt.git</connection>
     </scm>
     <developers>
       <developer>
