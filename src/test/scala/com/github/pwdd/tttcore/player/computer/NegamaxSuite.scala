@@ -1,7 +1,7 @@
-package com.github.pwdd.ttt.player.computer
+package com.github.pwdd.tttcore.player.computer
 
 import org.scalatest.FunSuite
-import com.github.pwdd.ttt.Board
+import com.github.pwdd.tttcore.Board
 
 class NegamaxSuite extends FunSuite {
   val e: Symbol = Board.emptySpot

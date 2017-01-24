@@ -1,4 +1,4 @@
-package com.github.pwdd.ttt
+package com.github.pwdd.tttcore
 
 object EvalGame {
   private val (emptySpot, firstPlayer, secondPlayer) = (Board.emptySpot, Board.firstPlayer, Board.secondPlayer)

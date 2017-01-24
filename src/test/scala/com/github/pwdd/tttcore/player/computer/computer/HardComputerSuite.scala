@@ -1,9 +1,9 @@
-package com.github.pwdd.ttt.player.computer
+package com.github.pwdd.tttcore.player.computer
 
 import org.scalatest.FunSuite
 
-import com.github.pwdd.ttt.Board
-import com.github.pwdd.ttt.player.Player
+import com.github.pwdd.tttcore.Board
+import com.github.pwdd.tttcore.player.Player
 
 class HardComputerSuite extends FunSuite {
   val x: Symbol = Board.firstPlayer

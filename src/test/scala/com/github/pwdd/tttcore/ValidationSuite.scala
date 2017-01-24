@@ -1,4 +1,4 @@
-package com.github.pwdd.ttt
+package com.github.pwdd.tttcore
 
 import org.scalatest.FunSuite
 

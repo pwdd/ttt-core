@@ -1,8 +1,8 @@
-package com.github.pwdd.ttt.player.computer
+package com.github.pwdd.tttcore.player.computer
 
 import org.scalatest.FunSuite
 
-import com.github.pwdd.ttt.Board
+import com.github.pwdd.tttcore.Board
 
 class EasyComputerSuite extends FunSuite {
   val x = Board.firstPlayer

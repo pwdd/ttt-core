@@ -1,4 +1,4 @@
-package com.github.pwdd.ttt
+package com.github.pwdd.tttcore
 
 object Board {
   val emptySpot = '_

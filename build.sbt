@@ -1,10 +1,12 @@
-name := "ttt"
+name := "tttcore"
 
-version := "0.0.1"
+version := "0.0.1.1"
 
 publishMavenStyle := true
 
 scalaVersion := "2.12.1"
+
+organization := "com.github.pwdd"
 
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.0"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.0" % "test"
@@ -25,7 +27,7 @@ pomIncludeRepository := { _ => false }
 
 sonatypeProfileName := "com.github.pwdd"
 
-pomExtra in Global := (
+pomExtra := (
   <url>https://github.com/pwdd/ttt</url>
     <licenses>
       <license>

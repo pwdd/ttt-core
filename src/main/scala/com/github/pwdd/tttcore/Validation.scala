@@ -1,4 +1,4 @@
-package com.github.pwdd.ttt
+package com.github.pwdd.tttcore
 
 object Validation {
   val validGameTypes = Map('humanXHuman -> "1", 'humanXComputer -> "2", 'computerXComputer -> "3")

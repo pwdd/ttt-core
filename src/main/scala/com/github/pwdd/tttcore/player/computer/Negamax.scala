@@ -1,9 +1,9 @@
-package com.github.pwdd.ttt.player.computer
+package com.github.pwdd.tttcore.player.computer
 
 import scala.util.control.Breaks.{break, breakable}
 
-import com.github.pwdd.ttt.Board
-import com.github.pwdd.ttt.EvalGame
+import com.github.pwdd.tttcore.Board
+import com.github.pwdd.tttcore.EvalGame
 
 class Negamax {
   val baseDepth = 100

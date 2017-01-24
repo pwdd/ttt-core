@@ -1,9 +1,9 @@
-package com.github.pwdd.ttt.player.computer
+package com.github.pwdd.tttcore.player.computer
 
-import com.github.pwdd.ttt.EvalGame
-import com.github.pwdd.ttt.Board
+import com.github.pwdd.tttcore.EvalGame
+import com.github.pwdd.tttcore.Board
 
-case class HardComputer(marker: Symbol) extends com.github.pwdd.ttt.player.Player {
+case class HardComputer(marker: Symbol) extends com.github.pwdd.tttcore.player.Player {
   val isAI = true
 
   def getSpot(board: List[Symbol]): Int = {
