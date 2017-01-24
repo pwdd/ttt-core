@@ -2,8 +2,6 @@ name := "ttt"
 
 version := "0.0.1"
 
-isSnapshot := false
-
 publishMavenStyle := true
 
 scalaVersion := "2.12.1"
@@ -25,7 +23,7 @@ publishTo := {
 
 pomIncludeRepository := { _ => false }
 
-sonatypeProfileName := "pwdd"
+sonatypeProfileName := "com.github.pwdd"
 
 pomExtra in Global := (
   <url>https://github.com/pwdd/ttt</url>
