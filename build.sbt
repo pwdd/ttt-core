@@ -25,7 +25,9 @@ publishTo := {
 
 pomIncludeRepository := { _ => false }
 
-pomExtra := (
+sonatypeProfileName := "pwdd"
+
+pomExtra in Global := (
   <url>https://github.com/pwdd/ttt</url>
     <licenses>
       <license>
@@ -35,7 +37,7 @@ pomExtra := (
       </license>
     </licenses>
     <scm>
-      <url>git@github.com:pwdd/tttcore.git</url>
+      <url>git@github.com:pwdd/ttt.git</url>
       <connection>scm:git@github.com:pwdd/ttt.git</connection>
     </scm>
     <developers>
