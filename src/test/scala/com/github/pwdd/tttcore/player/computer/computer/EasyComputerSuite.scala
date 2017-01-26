@@ -1,13 +1,12 @@
 package com.github.pwdd.tttcore.player.computer
 
 import org.scalatest.FunSuite
-
-import com.github.pwdd.tttcore.Board
+import com.github.pwdd.tttcore.{Board, Settings}
 
 class EasyComputerSuite extends FunSuite {
-  val x = Board.firstPlayer
-  val e = Board.emptySpot
-  val computer = new EasyComputer(x)
+  private val x = Settings.firstPlayer
+  private val e = Board.emptySpot
+  private val computer = new EasyComputer(x)
 
   test("getSpot: returns an index of an available spot") {
     val board = Board.newBoard(9)

@@ -1,13 +1,12 @@
 package com.github.pwdd.tttcore.player.computer
 
 import org.scalatest.FunSuite
-
-import com.github.pwdd.tttcore.Board
+import com.github.pwdd.tttcore.{Board, Settings}
 import com.github.pwdd.tttcore.player.Player
 
 class HardComputerSuite extends FunSuite {
-  val x: Symbol = Board.firstPlayer
-  val o: Symbol = Board.secondPlayer
+  val x: Symbol = Settings.firstPlayer
+  val o: Symbol = Settings.secondPlayer
   val e: Symbol = Board.emptySpot
   val computer = new HardComputer(o)
 

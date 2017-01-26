@@ -5,8 +5,8 @@ import org.scalatest.FunSuite
 class ValidationSuite extends  FunSuite {
   val emptyBoard: List[Symbol] = Board.newBoard(9)
   val e: Symbol = Board.emptySpot
-  val x: Symbol = Board.firstPlayer
-  val o: Symbol = Board.secondPlayer
+  val x: Symbol = Settings.firstPlayer
+  val o: Symbol = Settings.secondPlayer
 
   test("isValidMove: returns false if arg is smaller than 0") {
     assert(!Validation.isValidMove(emptyBoard, -1))

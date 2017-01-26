@@ -1,7 +1,7 @@
 package com.github.pwdd.tttcore
 
 object EvalGame {
-  private val (emptySpot, firstPlayer, secondPlayer) = (Board.emptySpot, Board.firstPlayer, Board.secondPlayer)
+  private val (emptySpot, firstPlayer, secondPlayer) = (Board.emptySpot, Settings.firstPlayer, Settings.secondPlayer)
 
   def winCombos(size: Int): List[List[Int]] = {
     val indexes = Board.indexes(size * size)

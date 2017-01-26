@@ -6,8 +6,8 @@ object BoardSuite extends FunSuite {
   val length = 9
   val emptyBoard: List[Symbol] = Board.newBoard(length)
   val e: Symbol = Board.emptySpot
-  val x: Symbol = Board.firstPlayer
-  val o: Symbol = Board.secondPlayer
+  val x: Symbol = Settings.firstPlayer
+  val o: Symbol = Settings.secondPlayer
 
   val rowsThree = List(List(0, 1, 2), List(3, 4, 5), List(6, 7, 8))
   val rowsFour = List(

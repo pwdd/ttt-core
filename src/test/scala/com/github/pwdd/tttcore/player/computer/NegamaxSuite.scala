@@ -1,12 +1,12 @@
 package com.github.pwdd.tttcore.player.computer
 
 import org.scalatest.FunSuite
-import com.github.pwdd.tttcore.Board
+import com.github.pwdd.tttcore.{Board, Settings}
 
 class NegamaxSuite extends FunSuite {
   val e: Symbol = Board.emptySpot
-  val x: Symbol = Board.firstPlayer
-  val o: Symbol = Board.secondPlayer
+  val x: Symbol = Settings.firstPlayer
+  val o: Symbol = Settings.secondPlayer
   val negamax = new Negamax
 
   test("score: returns 0 if game will end in a tie") {

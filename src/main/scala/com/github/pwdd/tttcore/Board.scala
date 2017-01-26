@@ -2,8 +2,6 @@ package com.github.pwdd.tttcore
 
 object Board {
   val emptySpot = '_
-  val firstPlayer = 'x
-  val secondPlayer = 'o
 
   def size(board: List[Any]): Int = Math.sqrt(board.length).toInt
 

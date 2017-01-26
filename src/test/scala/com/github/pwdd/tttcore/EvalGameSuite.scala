@@ -3,9 +3,9 @@ package com.github.pwdd.tttcore
 import org.scalatest.FunSuite
 
 class EvalGameSuite extends FunSuite {
-  val e: Symbol = Board.emptySpot
-  val x: Symbol = Board.firstPlayer
-  val o: Symbol = Board.secondPlayer
+  private val e: Symbol = Board.emptySpot
+  private val x: Symbol = Settings.firstPlayer
+  private val o: Symbol = Settings.secondPlayer
 
   test("winCombo: returns the indexes of the second row") {
     val board = List(
@@ -135,10 +135,10 @@ class EvalGameSuite extends FunSuite {
   }
 
   test("getOpponentMarker: returns first player if current player is the second") {
-    assert(EvalGame.opponentMarker(Board.secondPlayer) === Board.firstPlayer)
+    assert(EvalGame.opponentMarker(o) === x)
   }
 
   test("getOpponentMarker: returns second player if current player is the first") {
-    assert(EvalGame.opponentMarker(Board.firstPlayer) === Board.secondPlayer)
+    assert(EvalGame.opponentMarker(x) === o)
   }
 }
